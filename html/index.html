@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+	<link rel="shortcut icon" type="text/css" href="../项目/images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="indexShouye.css">
+	<link rel="stylesheet" type="text/css" href="../项目/iconFont/iconFont.css">
+	<script type="text/javascript" src="../项目/Highcharts-4.0.1/jquery-2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="../项目/Highcharts-4.0.1/js/highcharts.js"></script>
+	<script type="text/javascript" src="../项目/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../项目/bootstrap-4.1.3-dist/css/bootstrap.min.css">
+	<script type="text/javascript" src="index.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/模态框.css">
+	<link rel="stylesheet" type="text/css" href="../iconfont/iconfont.css">
+</head>
+<body class="wp">
+	<div class="container">
+		<div class="row">
+			<div class="col col-md-2">
+				<ul class="nav nav-list">
+					<li class="nav-header">
+							<img src="../项目/images/logo.png" alt="" class="logo">
+							<span>看点资讯</span>
+					</li>
+				</ul>	
+			</div>	
+			<div class="col col-md-10">
+				<div><i class="iconfont icon-liebiao1"></i></div>
+				<div>
+					<i class="iconfont icon-laba"></i>
+					<span>4</span>
+				</div>
+				<div>
+					<img src="../项目/images/touxiang.png">
+				</div>
+				<div>
+					<span>乔美丽 ></span>
+				</div>
+			</div>
+		</div>
+	<!-- 首页 -->
+		<div class="row shouye">
+			<div class="col col-md-2 under">
+				<ul class="nav nav-list">		
+					<li class="li">
+						<i class="iconfont icon-shouye"></i>
+						<span>首页</span>
+						<i class="iconfont icon-kuozhan"></i>
+					</li>
+					<li class="li">
+						<i class="iconfont icon-liebiao"></i>
+						<span>栏目管理</span>
+						<i class="iconfont icon-kuozhan"></i>				
+					</li>
+					<li class="li">
+						<i class="iconfont icon-zixun"></i>
+						<span>资讯管理</span>
+						<i class="iconfont icon-kuozhan"></i>
+					</li>
+					<li class="li">
+						<i class="iconfont icon-ai-user"></i>
+						<span>用户管理</span>
+						<i class="iconfont icon-kuozhan"></i>
+					</li>
+				</ul>
+			</div>
+	<!-- 首页内容 -->
+			<div class="col rightBottom ">
+				<div class="col-top">
+					<div class="number">
+						<div class="number-1">
+							<div>
+								<i class="iconfont icon-yun1"></i>
+							</div>
+							<div>
+								<p>99.9%</p><span>SEVER UPTIME</span>
+							</div>
+						</div>
+						<div class="number-2">
+							<div>
+								<i class="iconfont icon-yun1"></i>
+							</div>
+							<div>
+								<p>99.9%</p><span>SEVER UPTIME</span>
+							</div>
+						</div>
+						<div class="number-3">
+							<div>
+								<i class="iconfont icon-yun1"></i>
+							</div>
+							<div>
+								<p>99.9%</p><span>SEVER UPTIME</span>
+							</div>
+						</div>
+					</div>
+	<!-- 首页折线图 -->
+					<div class="lineChart">
+						
+					</div>
+					<div class="barChart">
+						<!-- /*首页柱状图*/ -->
+						<div class="barChart-1"></div>
+						<!-- 首页扇形图 -->
+						<div class="barChart-2"></div>
+					</div>
+				</div>
+				<div class="col-bottom">
+
+					<div class="col-bottom-left">
+						
+					</div>
+					<div class="col-bottom-right">
+						<div class="col-bottom-right-top"></div>
+						<div class="col-bottom-right-bottom"></div>
+					</div>
+				</div>
+			</div>
+	<!-- 栏目管理内容 -->
+			<div class="col rightBottom Program show">
+				<button class="btn btn-success add" data-toggle="modal" >新增</button><!-- data-target=".modal" -->
+				<div class="modal" id="lanmumodal">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<span  data-dismiss="modal">< 返回</span>
+								添加栏目信息
+							</div>
+							<div class="modal-body">
+								<span class="hiddenId" style="display: none;"></span>
+								<input class="inp1" type="text" placeholder="栏目名称" required="">
+								<input class="inp2" type="text" placeholder="备注" required="">
+								<!-- <input class="inp3" type="text" placeholder="序号" required=""> -->
+								<input class="inp4" type="text" placeholder="父栏目(可不填)" >
+							</div>
+							<div class="modal-footer">
+								<button class="btn btn-danger sub" data-dismiss="modal">确认</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button class="btn btn-warning batchDelete" >批量删除</button>
+				<table class="table table-bordered lanmu">
+					<thead>
+						<tr>
+							<th>编号</th>
+							<th>栏目名称</th>
+							<th>父栏目</th>
+							<th>描述</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+					</tbody>
+				</table>
+			</div>
+<!-- 资讯管理内容 -->
+			<div class="col rightBottom Information show">
+				<button class="btn btn-success addZiXun" data-toggle="modal" >新增</button><!-- data-target="#zimodal" -->
+				<button class="btn btn-warning">批量删除</button>
+<!--资讯a查询页码 	 -->
+				<div class="selectPage">
+					<span>页码:</span>
+					<input type="text" name="" size="4">
+<!-- 资讯查询数量	 -->				
+					<span>数量</span>
+					<input type="text" name="" size="4">
+					<button>确定</button>
+				</div>
+<!--资讯管理内容添加模态框-->		
+				<div class="modal" id="zimodal">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<!-- <span  data-dismiss="modal">< 返回</span> -->
+								<span class="modal-title">发布资讯</span>
+							</div>
+							<div class="modal-body">
+								<span class="ziTitle">标题</span>
+								<div class="ziInpTitle">
+									<input  type="" name="" autofocus="">
+								</div>
+								<span class="ziOff">所属栏目</span>
+								<div class="ziSelect">
+									<select>
+										<option value=""></option>
+										<option value=""></option>
+										<option value=""></option>
+										<option value=""></option>
+										<option value=""></option>
+									</select>
+								</div>
+								<span class="ziStyle">列表样式</span>
+								<div class="ziStyleBody">
+									<div>
+										<p>再见了，二维码!微信、支付宝同时宣布:</p>
+										<p>全新支付方式来了……</p>
+										<img src="../项目/images/1.jpg" alt="">
+										<img src="../项目/images/2.jpg" alt="">
+										<img src="../项目/images/3.jpg" alt="">
+									</div>
+									<div>
+										<div>再见了，二维码!微信、支付宝同时宣布:全新支付方式来了……</div>
+										<img src="../项目/images/3.jpg">
+									</div>
+								</div>
+								<span class="ziImg">列表缩略图</span>
+								<div class="ziImgUp">
+									<button>点击上传</button>
+								</div>
+								<span class="ziArticle">正文</span>
+								<div class="ziInpArticle" >
+									<textarea rows="6"></textarea>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button class="btn btn-success close" data-dismiss="modal">取消</button>
+								<button class="btn btn-danger release" data-dismiss="modal">发布</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>编号</th>
+							<th>文章标题</th>
+							<th>所属栏目</th>
+							<th>背景音乐</th>
+							<th>作者</th>
+							<th>发布时间</th>
+							<th>阅读次数</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody class="ziXunTbody">
+						<tr class="cloneTr">
+							<td><div><input type="checkbox" name=""></div></td>
+							<td><div></div></td>
+							<td><div></div></td>
+							<td><div></div></td>
+							<td><div></div></td>
+							<td><div></div></td>
+							<td><div></div></td>
+							<td><div><i class='iconfont icon-shanchu  ziXunDel'></i><i class="iconfont icon-xiugai  ziXunUpdate" data-toggle="modal"></i></div></td>
+						</tr>
+					</tbody>
+				</table>
+	<!-- 资讯管理内容修改模态框 -->
+			<!-- 	<div class="modal" id="updateModal" >
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<span>修改资讯信息</span>
+							</div>
+							<div class="modal-body">
+								<div><span>文章标题:</span>
+								<input type="text" name=""></div>
+				
+								<div><span>所属栏目:</span>
+								<input type="text" name=""></div>
+				
+								<div><span>背景音乐:</span>
+								<input type="text" name=""></div>
+				
+								<div><span>作者:</span>
+								<input type="text" name=""></div>
+				
+								<div><span>发布次数:</span> 
+								<input type="text" name=""></div>
+							</div>
+							<div class="modal-footer">
+								<button class="btn btn-success cancelUpd" data-dismiss="modal">取消</button>
+								<button class="btn btn-danger " >确定</button>
+							</div>
+						</div>
+					</div>
+				</div> -->
+			</div>
+	<!-- 用户管理内容 -->
+			<div class="col rightBottom user show">
+				<button class="btn btn-success">新增</button>
+				<div class="user-1">
+					<div class="user-1-touxiang">
+						<img src="../项目/images/1.jpg">
+					</div>
+					<table class="user-1-xx">
+						<tr>
+							<td><span>用户名</span></td>
+							<td><span>fsgvx</span></td>
+						</tr>
+						<tr>
+							<td><span>真实姓名</span></td>
+							<td><span>乔美丽</span></td>
+						</tr>
+						<tr>
+							<td><span>手机号</span></td>
+							<td><span>18812344321</span></td>
+						</tr>
+						<tr>
+							<td><span>email</span></td>
+							<td><span>qiaoml@briup.cn</span></td>
+						</tr>
+						<tr>
+							<td><span>状态</span></td>
+							<td><span></span></td>
+						</tr>
+					</table>
+				</div>
+				<div class="user-2">
+					<div class="user-1-touxiang">
+						<img src="../项目/images/5.jpg">
+					</div>
+					<table class="user-1-xx">
+						<tr>
+							<td><span>用户名</span></td>
+							<td><span>fsgvx</span></td>
+						</tr>
+						<tr>
+							<td><span>真实姓名</span></td>
+							<td><span>乔美丽</span></td>
+						</tr>
+						<tr>
+							<td><span>手机号</span></td>
+							<td><span>18812344321</span></td>
+						</tr>
+						<tr>
+							<td><span>email</span></td>
+							<td><span>qiaoml@briup.cn</span></td>
+						</tr>
+						<tr>
+							<td><span>状态</span></td>
+							<td><span></span></td>
+						</tr>
+					</table>
+				</div>
+				<div class="user-3">
+					<div class="user-1-touxiang">
+						<img src="../项目/images/4.jpg">
+					</div>
+					<table class="user-1-xx">
+						<tr>
+							<td><span>用户名</span></td>
+							<td><span>fsgvx</span></td>
+						</tr>
+						<tr>
+							<td><span>真实姓名</span></td>
+							<td><span>乔美丽</span></td>
+						</tr>
+						<tr>
+							<td><span>手机号</span></td>
+							<td><span>18812344321</span></td>
+						</tr>
+						<tr>
+							<td><span>email</span></td>
+							<td><span>qiaoml@briup.cn</span></td>
+						</tr>
+						<tr>
+							<td><span>状态</span></td>
+							<td><span></span></td>
+						</tr>
+					</table>
+				</div>
+				<div class="user-4">
+					<div class="user-1-touxiang">
+						<img src="../项目/images/3.jpg">
+					</div>
+					<table class="user-1-xx">
+						<tr>
+							<td><span>用户名</span></td>
+							<td><span>fsgvx</span></td>
+						</tr>
+						<tr>
+							<td><span>真实姓名</span></td>
+							<td><span>乔美丽</span></td>
+						</tr>
+						<tr>
+							<td><span>手机号</span></td>
+							<td><span>18812344321</span></td>
+						</tr>
+						<tr>
+							<td><span>email</span></td>
+							<td><span>qiaoml@briup.cn</span></td>
+						</tr>
+						<tr>
+							<td><span>状态</span></td>
+							<td><span></span></td>
+						</tr>
+					</table>
+				</div>
+				<div class="user-5">
+					<div class="user-1-touxiang">
+						<img src="../项目/images/2.jpg">
+					</div>
+					<table class="user-1-xx">
+						<tr>
+							<td><span>用户名</span></td>
+							<td><span>fsgvx</span></td>
+						</tr>
+						<tr>
+							<td><span>真实姓名</span></td>
+							<td><span>乔美丽</span></td>
+						</tr>
+						<tr>
+							<td><span>手机号</span></td>
+							<td><span>18812344321</span></td>
+						</tr>
+						<tr>
+							<td><span>email</span></td>
+							<td><span>qiaoml@briup.cn</span></td>
+						</tr>
+						<tr>
+							<td><span>状态</span></td>
+							<td><span></span></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+<!-- 资讯管理内容修改模态框 -->
+	<div class="modal" id="updateModal" >
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<span>修改资讯信息</span>
+				</div>
+				<div class="modal-body">
+					<div><span>文章标题:</span>
+					<input type="text" name=""></div>
+	
+					<div class="selectParent">
+						<span>所属栏目:</span>
+						<select class="selectOption"></select>
+					</div>
+	
+					<div><span>背景音乐:</span>
+					<input type="text" name=""></div>
+	
+					<div><span class="A">作 者:</span>
+					<input type="text" name=""></div>
+	
+					<div><span>发布时间:</span> 
+					<input type="text" name=""></div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-success cancelUpd" data-dismiss="modal">取消</button>
+					<button class="btn btn-danger ziXunSub" >确定</button>
+				</div>
+			</div>
+		</div>
+	</div>			
+</body>
+</html>

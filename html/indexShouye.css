@@ -1,0 +1,55 @@
+.number {
+	position: relative;
+	
+}
+.number-1,.number-2,.number-3 {
+	position: relative;
+	top: 0;
+}
+.number-1>div,.number-2>div,.number-3>div {
+	float: left;
+}
+.number-1>div:first-child,.number-2>div:first-child,.number-3>div:first-child {
+	width: 36px;
+	height: 36px;
+	border: 1px solid #299D03;
+	background-color: #299D03;
+	color: #fff;
+	margin-left: 20px;
+	margin-top: 27px;
+	text-align: center;
+	line-height: 32px;
+	border-radius: 50%;
+}
+
+.number-1>div:last-child,.number-2>div:last-child,.number-3>div:last-child {
+	margin-top: 31px;
+	margin-left: 15px;
+	width: 72px;
+	height: 36px;
+	padding-top: 0;
+}
+.number-1>div:last-child>p,.number-2>div:last-child>p,.number-3>div:last-child>p {
+	font-size: 22px;
+	font-weight: 700;
+	margin: 0;
+	line-height: 10px;
+}
+.number-1>div:last-child>span,.number-2>div:last-child>span,.number-3>div:last-child>span {
+	font-size: 9px;
+	color: #A6A2A8;
+	line-height: 0px;
+}
+/* 首页折线图 */
+.lineChart{
+	position: relative;
+	top: -10px;
+}
+.barChart {
+	position: relative;
+	top: -165px;
+}
+.barChart-1 {
+	position: relative;
+	top: 0;
+}
